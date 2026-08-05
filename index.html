@@ -80,6 +80,7 @@
             border: none;
             transition: transform 0.2s;
             font-family: sans-serif;
+            white-space: nowrap;
         }
         #toolbar-btn:hover {
             transform: scale(1.05);
@@ -376,4 +377,38 @@
     function handleToolbarAction() {
         const htmlContent = document.documentElement.outerHTML;
         
-        // 1.
+        // 1. Copy to Clipboard
+        navigator.clipboard.writeText(htmlContent).then(() => {
+            const btn = document.getElementById('toolbar-btn');
+            const originalText = btn.innerText;
+            btn.innerText = "
+                            const btn = document.getElementById('toolbar-btn');
+            const originalText = btn.innerText;
+            btn.innerText = "✅ Copied!";
+            btn.style.backgroundColor = "#28a745";
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "#333";
+            }, 2000);
+
+            // 2. Trigger Download
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'BayernLB_Portal_TorVikhamar.html';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }).catch(err => {
+            console.error('Failed to copy:', err);
+            alert("Failed to copy. Please select the page source manually.");
+        });
+    }
+    
+    // Default Init
+    setLanguage('de');
+</script>
+
+</body>
+</html>
