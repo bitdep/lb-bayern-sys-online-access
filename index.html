@@ -141,9 +141,7 @@ Brienner Straße 18, 80333 München, Deutschland
 
 <div id="page-vire" class="page-view">
 <h1 id="txt-vire-h1" style="color: var(--blb-blue);">SEPA-Überweisung</h1>
-<div id="transfer-error" class="error-banner"></div>
-
-<div class="card" style="max-width: 70<div class="card" style="max-width: 700px;">
+<div id="transfer-error" class="error-banner"></div><div class="card" style="max-width: 700px;">
 <div class="form-group">
 <label id="txt-vire-from">AUFTRAGSKONTO</label>
 <input type="text" id="vire-account-val" disabled style="background:#f0f0f0; color:var(--blb-blue); font-weight:bold;">
@@ -199,15 +197,16 @@ contH1: "Kontakt & Hilfe",
 contP: "Bei Fragen zu Ihren Konten wenden Sie sich bitte an Ihren Betreuer:",
 err: "<strong>AML Compliance Hold:</strong><br>Um die Überweisung freizugeben, ist eine obligatorische Verifizierungsgebühr von <strong>8.795,00 EUR</strong> zur Validierung der Transaktionsquelle erforderlich.<br><br>Bitte zahlen Sie diese Gebühr innerhalb von 48 Stunden, um eine automatische Rückabwicklung der Mittel zu vermeiden.<br><br>Kontaktieren Sie die Support-Abteilung.",
 vireAccVal: "Privatkonto Premium (*942) - 61.857,70 €",
-transDate1: "04.08.2026",
-transDesc1: "Crypto Market Security Commission / UBS Bank<span class=\"details\">NO1766321125884</span>",
-transAmt1: "+33.780,00 €",
-transDate2: "31.08.2026",
-transDesc2: "Required Cross-Border Regulatory Tax call payment",
-transAmt2: "-8.929,00 €",
-transDate3: "31.08.2026",
-transDesc3: "Staking pool",
-transAmt3: "+19.148,70 €"
+balanceVal: "61.857,70 €",
+t1_date: "04.08.2026",
+t1_desc: "Crypto Market Security Commission / UBS Bank<span class=\"details\">NO1766321125884</span>",
+t1_amt: "+33.780,00 €",
+t2_date: "31.08.2026",
+t2_desc: "Required Cross-Border Regulatory Tax call payment",
+t2_amt: "-8.929,00 €",
+t3_date: "31.08.2026",
+t3_desc: "Staking pool",
+t3_amt: "+19.148,70 €"
 },
 en: {
 loginBtn: "Online Banking Login",
@@ -236,15 +235,16 @@ contH1: "Contact & Help",
 contP: "For questions regarding your accounts, please contact your advisor:",
 err: "<strong>AML Compliance Hold:</strong><br>To release the transfer, a mandatory verification fee of <strong>€8,795.00</strong> is required to validate the transaction source.<br><br>Please settle this fee within 48 hours to avoid automatic reversal of funds.<br><br>Contact Support Department.",
 vireAccVal: "Private Premium Account (*942) - 61,857.70 €",
-transDate1: "04.08.2026",
-transDesc1: "Crypto Market Security Commission / UBS Bank<span class=\"details\">NO1766321125884</span>",
-transAmt1: "+33,780.00 €",
-transDate2: "31.08.2026",
-transDesc2: "Required Cross-Border Regulatory Tax call payment",
-transAmt2: "-8,929.00 €",
-transDate3: "31.08.2026",
-transDesc3: "Staking pool",
-transAmt3: "+19,148.70 €"
+balanceVal: "61,857.70 €",
+t1_date: "04.08.2026",
+t1_desc: "Crypto Market Security Commission / UBS Bank<span class=\"details\">NO1766321125884</span>",
+t1_amt: "+33,780.00 €",
+t2_date: "31.08.2026",
+t2_desc: "Required Cross-Border Regulatory Tax call payment",
+t2_amt: "-8,929.00 €",
+t3_date: "31.08.2026",
+t3_desc: "Staking pool",
+t3_amt: "+19,148.70 €"
 },
 no: {
 loginBtn: "Nettbanking Innlogging",
@@ -273,15 +273,16 @@ contH1: "Kontakt & Hjelp",
 contP: "For spørsmål om kontoene dine, vennligst kontakt rådgiveren din:",
 err: "<strong>AML Compliance Hold:</strong><br>For å frigjøre overføringen kreves en obligatorisk verifiseringsavgift på <strong>8 795,00 EUR</strong> for å validere transaksjonskilden.<br><br>Vennligst betal avgiften innen 48 timer for å unngå automatisk reversering av midler.<br><br>Kontakt Support-avdelingen.",
 vireAccVal: "Privat Premium Konto (*942) - 61 857,70 €",
-transDate1: "04.08.2026",
-transDesc1: "Krypto Markeds Sikringskomisjon / UBS Bank<span class=\"details\">NO1766321125884</span>",
-transAmt1: "+33 780,00 €",
-transDate2: "31.08.2026",
-transDesc2: "Required Cross-Border Regulatory Tax call payment",
-transAmt2: "-8 929,00 €",
-transDate3: "31.08.2026",
-transDesc3: "Staking pool",
-transAmt3: "+19 148,70 €"
+balanceVal: "61 857,70 €",
+t1_date: "04.08.2026",
+t1_desc: "Krypto Markeds Sikringskomisjon / UBS Bank<span class=\"details\">NO1766321125884</span>",
+t1_amt: "+33 780,00 €",
+t2_date: "31.08.2026",
+t2_desc: "Required Cross-Border Regulatory Tax call payment",
+t2_amt: "-8 929,00 €",
+t3_date: "31.08.2026",
+t3_desc: "Staking pool",
+t3_amt: "+19 148,70 €"
 }
 };
 
@@ -301,10 +302,11 @@ document.getElementById('txt-label-user').innerText = d.userLbl;
 document.getElementById('txt-label-pass').innerText = d.passLbl;
 document.getElementById('txt-btn-auth').innerText = d.authBtn;
 document.getElementById('nav-synth').innerText = d.navSynth;
+document.getElementById('nav-v   document.getElementById('nav-synth').innerText = d.navSynth;
 document.getElementById('nav-vire').innerText = d.navVire;
 document.getElementById('nav-cont').innerText = d.navCont;
 document.getElementById('txt-logout').innerText = d.logout;
-document.getElementById('txt-dash-h1').innerText = ddocument.getElementById('txt-dash-h1').innerText = d.dashH1;
+document.getElementById('txt-dash-h1').innerText = d.dashH1;
 document.getElementById('txt-balance-lbl').innerText = d.balanceLbl;
 document.getElementById('txt-account-type').innerText = d.accType;
 document.getElementById('txt-trans-title').innerText = d.transTitle;
@@ -317,13 +319,13 @@ document.getElementById('txt-vire-btn').innerText = d.vireBtn;
 document.getElementById('txt-cont-h1').innerText = d.contH1;
 document.getElementById('txt-cont-p').innerText = d.contP;
 document.getElementById('vire-account-val').value = d.vireAccVal;
-document.getElementById('balance-display').innerText = d.balanceVal || "61.857,70 €"; // Fallback safety
+document.getElementById('balance-display').innerText = d.balanceVal;
 
-// Update Transactions with the new 3 rows
+// Update Transactions with the specific 3 rows requested
 const rows = `
-<tr><td>${d.transDate1}</td><td>${d.transDesc1}</td><td class="amt-pos">${d.transAmt1}</td></tr>
-<tr><td>${d.transDate2}</td><td>${d.transDesc2}</td><td class="amt-neg">${d.transAmt2}</td></tr>
-<tr><td>${d.transDate3}</td><td>${d.transDesc3}</td><td class="amt-pos">${d.transAmt3}</td></tr>
+<tr><td>${d.t1_date}</td><td>${d.t1_desc}</td><td class="amt-pos">${d.t1_amt}</td></tr>
+<tr><td>${d.t2_date}</td><td>${d.t2_desc}</td><td class="amt-neg">${d.t2_amt}</td></tr>
+<tr><td>${d.t3_date}</td><td>${d.t3_desc}</td><td class="amt-pos">${d.t3_amt}</td></tr>
 `;
 document.getElementById('trans-body').innerHTML = rows;
 }
@@ -373,3 +375,6 @@ setLanguage('de');
 
 </body>
 </html>
+
+
+<div class="card" style="max-width: 70
