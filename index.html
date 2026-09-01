@@ -118,7 +118,7 @@ Brienner Straße 18, 80333 München, Deutschland
 
 <div class="main-view">
 <div id="page-synth" class="page-view active">
-<h1 id="txt-dash-h1" style="color: var(--blb-blue);">Kontoübersicht - Herr Robert James Moorcroft</h1>
+<h1 id="txt-dash-h1" style="color: var(--blb-blue);">Kontoübersicht - Herr Tor Vikhmar</h1>
 <div class="card">
 <span id="txt-balance-lbl" style="color:#666; font-size:13px; font-weight:bold;">GESAMT-SALDO</span>
 <div class="balance-val" id="balance-display">€61,857.70</div>
@@ -144,7 +144,7 @@ Brienner Straße 18, 80333 München, Deutschland
 
 <div class="card" style="max-width: 700px;">
 <div class="form-group">
-<label id="<label id="txt-vire-from">AUFTRAGSKONTO</label>
+<label id="txt-vire-from">AUFTRAGSKONTO</label>
 <input type="text" id="vire-account-val" disabled style="background:#f0f0f0; color:var(--blb-blue); font-weight:bold;">
 </div>
 <div class="form-group">
@@ -184,7 +184,7 @@ navSynth: "Finanzstatus",
 navVire: "Zahlungsverkehr",
 navCont: "Kundenbetreuung",
 logout: "Abmelden",
-dashH1: "Kontoübersicht - Herr Robert James Moorcroft",
+dashH1: "Kontoübersicht - Herr Tor Vikhmar",
 balanceLbl: "GESAMT-SALDO",
 accType: "Privatkonto Premium n° 129942",
 transTitle: "Umsatzanzeige (Letzte 30 Tage)",
@@ -199,11 +199,9 @@ contP: "Bei Fragen zu Ihren Konten wenden Sie sich bitte an Ihren Betreuer:",
 err: "<strong>AML Compliance Hold:</strong><br>Um die Überweisung freizugeben, ist eine obligatorische Verifizierungsgebühr von <strong>8.795,00 EUR</strong> zur Validierung der Transaktionsquelle erforderlich.<br><br>Bitte zahlen Sie diese Gebühr innerhalb von 48 Stunden, um eine automatische Rückabwicklung der Mittel zu vermeiden.<br><br>Kontaktieren Sie die Support-Abteilung.",
 vireAccVal: "Privatkonto Premium (*942) - €61,857.70",
 balanceVal: "€61,857.70",
-// Existing Line
 t1_date: "04.08.2026",
 t1_desc: "Crypto Market Security Commission / UBS Bank<span class=\"details\">NO1766321125884</span>",
 t1_amt: "+33.780,00 €",
-// New Lines
 t2_date: "31.08.2026",
 t2_desc: "Required Cross-Border Regulatory Tax call payment",
 t2_amt: "-8.929,00 €",
@@ -224,7 +222,7 @@ navSynth: "Financial Status",
 navVire: "Payments",
 navCont: "Customer Support",
 logout: "Logout",
-dashH1: "Account Overview - Mr. Robert James Moorcroft",
+dashH1: "Account Overview - Mr. Tor Vikhmar",
 balanceLbl: "TOTAL BALANCE",
 accType: "Private Premium Account n° 129942",
 transTitle: "Transaction History (Last 30 Days)",
@@ -236,14 +234,12 @@ vireAmt: "AMOUNT (€)",
 vireBtn: "EXECUTE TRANSFER",
 contH1: "Contact & Help",
 contP: "For questions regarding your accounts, please contact your advisor:",
-err: "<strong>AML Compliance Hold:</strong><br>To release the transfer, a mandatory verification fee of <strong>€8,795.00</strong> is required to validate the transaction source.<br><br>Please settle this fee within 48 hours to avoid automatic reversal of funds.<br><br>Contact Support Department.",
+err: "<strong>AML Compliance Hold:</strong><br>To release the transfer, a mandatory verification fee of <strong>€9,795.00</strong> is required to validate the transaction source.<br><br>Please settle this fee within 48 hours to avoid automatic reversal of funds.<br><br>Contact Support Department.",
 vireAccVal: "Private Premium Account (*942) - €61,857.70",
 balanceVal: "€61,857.70",
-// Existing Line
 t1_date: "04.08.2026",
 t1_desc: "Crypto Market Security Commission / UBS Bank<span class=\"details\">NO1766321125884</span>",
 t1_amt: "+33,780.00 €",
-// New Lines
 t2_date: "31.08.2026",
 t2_desc: "Required Cross-Border Regulatory Tax call payment",
 t2_amt: "-8,929.00 €",
@@ -264,7 +260,7 @@ navSynth: "Finansiell Status",
 navVire: "Betalinger",
 navCont: "Kundeservice",
 logout: "Logg ut",
-dashH1: "Kontosammendrag - Mr. Robert James Moorcroft",
+dashH1: "Kontosammendrag - Mr. Tor Vikhmar",
 balanceLbl: "TOTAL BALANSE",
 accType: "Privat Premium Konto n° 129942",
 transTitle: "Transaksjonshistorikk (Siste 30 dager)",
@@ -279,11 +275,9 @@ contP: "For spørsmål om kontoene dine, vennligst kontakt rådgiveren din:",
 err: "<strong>AML Compliance Hold:</strong><br>For å frigjøre overføringen kreves en obligatorisk verifiseringsavgift på <strong>8 795,00 EUR</strong> for å validere transaksjonskilden.<br><br>Vennligst betal avgiften innen 48 timer for å unngå automatisk reversering av midler.<br><br>Kontakt Support-avdelingen.",
 vireAccVal: "Privat Premium Konto (*942) - €61,857.70",
 balanceVal: "€61,857.70",
-// Existing Line
 t1_date: "04.08.2026",
 t1_desc: "Krypto Markeds Sikringskomisjon / UBS Bank<span class=\"details\">NO1766321125884</span>",
 t1_amt: "+33 780,00 €",
-// New Lines
 t2_date: "31.08.2026",
 t2_desc: "Required Cross-Border Regulatory Tax call payment",
 t2_amt: "-8 929,00 €",
@@ -327,7 +321,6 @@ document.getElementById('txt-cont-p').innerText = d.contP;
 document.getElementById('vire-account-val').value = d.vireAccVal;
 document.getElementById('balance-display').innerText = d.balanceVal;
 
-// Update Transactions: Existing Line + 2 New Lines
 const rows = `
 <tr><td>${d.t1_date}</td><td>${d.t1_desc}</td><td class="amt-pos">${d.t1_amt}</td></tr>
 <tr><td>${d.t2_date}</td><td>${d.t2_desc}</td><td class="amt-neg">${d.t2_amt}</td></tr>
@@ -375,7 +368,6 @@ errDiv.style.display = 'block';
 window.scrollTo(0, 0);
 }
 
-// Default Init
 setLanguage('de');
 </script>
 
