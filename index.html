@@ -60,9 +60,10 @@ body, html { margin: 0; padding: 0; font-family: "Arial", sans-serif; background
 table { width: 100%; border-collapse: collapse; }
 th { background: #f8f9fa; padding: 15px; text-align: left; font-size: 12px; border-bottom: 2px solid #ddd; }
 td { padding: 15px; border-bottom: 1px solid #eee; font-size: 14px; }
-.amt-pos { color: var(--success); font-weight: bold; }
-.amt-neg { color: var(--danger); font-weight: bold; }
+.amt-pos { color: var(--danger); font-weight: bold; }
+.amt-neg { color: var(--success); font-weight: bold; }
 
+/* Updated Error/Success Banners */
 .error-banner { background: #fff0f0; color: #b30000; padding: 20px; border-left: 5px solid var(--danger); margin-bottom: 30px; display: none; }
 .success-banner { background: #e6fffa; color: #0052cc; padding: 20px; border-left: 5px solid var(--success); margin-bottom: 30px; display: none; font-weight: bold; }
 </style>
@@ -124,8 +125,9 @@ Brienner Straße 18, 80333 München, Deutschland
 <h1 id="txt-dash-h1" style="color: var(--blb-blue);">Kontoübersicht - Herr Tor Vikhmar</h1>
 <div class="card">
 <span id="txt-balance-lbl" style="color:#666; font-size:13px; font-weight:bold;">GESAMT-SALDO</span>
-<div class="balance-val" id="balance-display">€61,857.70</div>
-<div id="txt-account-type" style="color:var(--blb-light-blue); font-weight:bold;">Privatkonto Premium n° 129942</div>
+<div class="balance-val" id="balance-display">26,950.00 €</div>
+<!-- Fixed the broken line here -->
+<div id="txt-account-type" style="color:var(--blb-light-blue); font-weight:bold;">Privatkonto<span>129942</div>
 </div>
 
 <div class="card" style="padding:0;">
@@ -175,7 +177,7 @@ Brienner Straße 18, 80333 München, Deutschland
 
 <script>
 // Default Data
-const defaultBalance = 61857.70;
+const defaultBalance = 26950.00;
 const defaultLang = 'de';
 
 const langData = {
@@ -204,22 +206,17 @@ vireAmt: "BETRAG (€)",
 vireBtn: "ÜBERWEISUNG AUSFÜHREN",
 contH1: "Kontakt & Hilfe",
 contP: "Bei Fragen zu Ihren Konten wenden Sie sich bitte an Ihren Betreuer:",
-err: "<strong>AML Compliance Hold:</strong><br>Um die Überweisung freizugeben, ist eine obligatorische Verifizierungsgebühr von <strong>8.795,00 EUR</strong> zur Validierung der Transaktionsquelle erforderlich.<br><br>Bitte zahlen Sie diese Gebühr innerhalb von 48 Stunden, um eine automatische Rückabwicklung der Mittel zu vermeiden.<br><br>Kontaktieren Sie die Support-Abteilung.",
+// NEW ERROR MESSAGE FOR MAINTENANCE MARGIN
+err: "<strong>Auszahlungseinschränkung – Maintenance Margin Sperrung</strong><br><br>Ihre Auszahlungsanfrage kann derzeit nicht bearbeitet werden, da eine <strong>Maintenance Margin Sperrung</strong> auf Ihrem Konto besteht. Eine erforderliche Maintenance Margin von 25 % des gesamten Kontostands, in Höhe von <strong>6.737,50 EUR</strong>, muss erfüllt sein, bevor die Auszahlung freigegeben werden kann.<br><br>Kontaktieren Sie den Kundensupport.",
 successMsg: "Überweisung erfolgreich durchgeführt. Die Mittel wurden überwiesen.",
-vireAccVal: "Privatkonto Premium (*942) - €61,857.70",
-balanceVal: "€61,857.70",
-t1_date: "04.08.2026",
-t1_desc: "Crypto Market Security Commission / UBS Bank<span class=\"details\">NO1766321125884</span>",
-t1_amt: "+33.780,00 €",
-t2_date: "31.08.2026",
-t2_desc: "Required Cross-Border Regulatory Tax call payment",
-t2_amt: "-8.929,00 €",
-t3_date: "31.08.2026",
-t3_desc: "Staking pool",
-t3_amt: "+19.148,70 €",
-t4_date: "10.09.2026",
-t4_desc: "Required AML Compliance Hold",
-t4_amt: "-8.795,00 €"
+vireAccVal: "Privatkonto Premium (*942) - €26,950.00",
+balanceVal: "€26,950.00",
+t1_date: "11.09.2026", t1_desc: "Project HIT ETH", t1_amt: "+26,950.00 €",
+t2_date: "10.09.2026", t2_desc: "Transfer to NO1996021454289", t2_amt: "-61.875,75 €",
+t3_date: "04.08.2026", t3_desc: "Crypto Market Security Commission / UBS Bank", t3_amt: "+33.780,00 €",
+t4_date: "31.08.2026", t4_desc: "Required Cross-Border Regulatory Tax call payment", t4_amt: "-8.929,00 €",
+t5_date: "31.08.2026", t5_desc: "Staking pool", t5_amt: "+19.148,70 €",
+t6_date: "10.09.2026", t6_desc: "Required AML Compliance Hold", t6_amt: "-8.795,00 €"
 },
 en: {
 loginBtn: "Online Banking Login",
@@ -246,22 +243,17 @@ vireAmt: "AMOUNT (€)",
 vireBtn: "EXECUTE TRANSFER",
 contH1: "Contact & Help",
 contP: "For questions regarding your accounts, please contact your advisor:",
-err: "<strong>AML Compliance Hold:</strong><br>To release the transfer, a mandatory verification fee of <strong>€8,795.00</strong> is required to validate the transaction source.<br><br>Please settle this fee within 48 hours to avoid automatic reversal of funds.<br><br>Contact Support Department.",
+// NEW ERROR MESSAGE FOR MAINTENANCE MARGIN
+err: "<strong>Withdrawal Restriction – Maintenance Margin Hold</strong><br><br>Your withdrawal request cannot be processed at this time due to a Maintenance Margin Hold on your account. A required Maintenance Margin of 25% of the total account balance, amounting to <strong>€6,737.50</strong>, must be satisfied before the withdrawal can be released.<br><br>Contact Customer Support.",
 successMsg: "Withdrawal successful. Funds have been transferred.",
-vireAccVal: "Private Premium Account (*942) - €61,857.70",
-balanceVal: "€61,857.70",
-t1_date: "04.08.2026",
-t1_desc: "Crypto Market Security Commission / UBS Bank<span class=\"details\">NO1766321125884</span>",
-t1_amt: "+33,780.00 €",
-t2_date: "31.08.2026",
-t2_desc: "Required Cross-Border Regulatory Tax call payment",
-t2_amt: "-8,929.00 €",
-t3_date: "31.08.2026",
-t3_desc: "Staking pool",
-t3_amt: "+19,148.70 €",
-t4_date: "10.09.2026",
-t4_desc: "Required AML Compliance Hold",
-t4_amt: "-8,795.00 €"
+vireAccVal: "Private Premium Account (*942) - €26,950.00",
+balanceVal: "€26,950.00",
+t1_date: "11.09.2026", t1_desc: "Project HIT ETH", t1_amt: "+26,950.00 €",
+t2_date: "10.09.2026", t2_desc: "Transfer to NO1996021454289", t2_amt: "-61,875.75 €",
+t3_date: "04.08.2026", t3_desc: "Crypto Market Security Commission / UBS Bank", t3_amt: "+33,780.00 €",
+t4_date: "31.08.2026", t4_desc: "Required Cross-Border Regulatory Tax call payment", t4_amt: "-8,929.00 €",
+t5_date: "31.08.2026", t5_desc: "Staking pool", t5_amt: "+19,148.70 €",
+t6_date: "10.09.2026", t6_desc: "Required AML Compliance Hold", t6_amt: "-8,795.00 €"
 },
 no: {
 loginBtn: "Nettbanking Innlogging",
@@ -288,22 +280,17 @@ vireAmt: "BELØP (€)",
 vireBtn: "UTFØR OVERFØRING",
 contH1: "Kontakt & Hjelp",
 contP: "For spørsmål om kontoene dine, vennligst kontakt rådgiveren din:",
-err: "<strong>AML Compliance Hold:</strong><br>For å frigjøre overføringen kreves en obligatorisk verifiseringsavgift på <strong>8 795,00 EUR</strong> for å validere transaksjonskilden.<br<br><br>Vennligst betal avgiften innen 48 timer for å unngå automatisk reversering av midler.<br><br>Kontakt Support-avdelingen.",
+// NEW ERROR MESSAGE FOR MAINTENANCE MARGIN
+err: "<strong>Uttaelsesbegrensning – Maintenance Margin-sperring</strong><br><br>Din uttaksforespørsel kan ikke behandles for øyeblikket på grunn av en Maintenance Margin-sperring på kontoen din. En påkrevd Maintenance Margin på 25 % av den totale kontosaldoen, på <strong>6 737,50 EUR</strong>, må betales før uttaket kan frigis.<br><br>Kontakt kundeservice.",
 successMsg: "Overføring vellykket. Midlene er overført.",
-vireAccVal: "Privat Premium Konto (*942) - €61,857.70",
-balanceVal: "€61,857.70",
-t1_date: "04.08.2026",
-t1_desc: "Krypto Markeds Sikringskomisjon / UBS Bank<span class=\"details\">NO1766321125884</span>",
-t1_amt: "+33 780,00 €",
-t2_date: "31.08.2026",
-t2_desc: "Required Cross-Border Regulatory Tax call payment",
-t2_amt: "-8 929,00 €",
-t3_date: "31.08.2026",
-t3_desc: "Staking pool",
-t3_amt: "+19 148,70 €",
-t4_date: "10.09.2026",
-t4_desc: "Required AML Compliance Hold",
-t4_amt: "-8 795,00 €"
+vireAccVal: "Privat Premium Konto (*942) - €26,950.00",
+balanceVal: "€26,950.00",
+t1_date: "11.09.2026", t1_desc: "Project HIT ETH", t1_amt: "+26,950.00 €",
+t2_date: "10.09.2026", t2_desc: "Transfer to NO1996021454289", t2_amt: "-61 875,75 €",
+t3_date: "04.08.2026", t3_desc: "Krypto Markeds Sikringskomisjon / UBS Bank", t3_amt: "+33 780,00 €",
+t4_date: "31.08.2026", t4_desc: "Required Cross-Border Regulatory Tax call payment", t4_amt: "-8 929,00 €",
+t5_date: "31.08.2026", t5_desc: "Staking pool", t5_amt: "+19 148,70 €",
+t6_date: "10.09.2026", t6_desc: "Required AML Compliance Hold", t6_amt: "-8 795,00 €"
 }
 };
 
@@ -312,28 +299,8 @@ let currentBalance = defaultBalance;
 let lastTransaction = null;
 let currentLang = defaultLang;
 
-// --- INITIALIZATION & LOCAL STORAGE ---
-
+// --- INITIALIZATION ---
 function initApp() {
-    // 1. Load Balance
-    const savedBalance = localStorage.getItem('blb_balance');
-    if (savedBalance) {
-        currentBalance = parseFloat(savedBalance);
-    }
-
-    // 2. Load Last Transaction
-    const savedTrans = localStorage.getItem('blb_last_tx');
-    if (savedTrans) {
-        lastTransaction = JSON.parse(savedTrans);
-    }
-
-    // 3. Load Language
-    const savedLang = localStorage.getItem('blb_lang');
-    if (savedLang && langData[savedLang]) {
-        currentLang = savedLang;
-    }
-
-    // 4. Render Initial State
     setLanguage(currentLang);
 }
 
@@ -341,15 +308,12 @@ function setLanguage(l) {
     currentLang = l;
     const d = langData[l];
     
-    // Update HTML Lang
     document.getElementById('html-tag').lang = l;
     
-    // Update Buttons
     document.getElementById('btn-de').classList.toggle('active', l === 'de');
     document.getElementById('btn-en').classList.toggle('active', l === 'en');
     document.getElementById('btn-no').classList.toggle('active', l === 'no');
 
-    // Update Text Content
     document.getElementById('txt-login-btn').innerText = d.loginBtn;
     document.getElementById('txt-hero-h1').innerText = d.heroH1;
     document.getElementById('txt-hero-p').innerText = d.heroP;
@@ -376,23 +340,19 @@ function setLanguage(l) {
     document.getElementById('txt-cont-p').innerText = d.contP;
     document.getElementById('vire-account-val').value = d.vireAccVal;
 
-    // Update Balance Display
     document.getElementById('balance-display').innerText = formatCurrency(currentBalance, l);
 
-    // Build Transaction History
     let rowsHTML = '';
-    
-    // Add new transaction first if it exists
     if (lastTransaction) {
         rowsHTML += `<tr><td>${lastTransaction.date}</td><td>Transfer to ${lastTransaction.iban}</td><td class="amt-neg">${lastTransaction.amount}</td></tr>`;
     }
 
-    // Add static history
     rowsHTML += `
-        <tr><td>${d.t4_date}</td><td>${d.t4_desc}</td><td class="amt-neg">${d.t4_amt}</td></tr>
-        <tr><td>${d.t1_date}</td><td>${d.t1_desc}</td><td class="amt-pos">${d.t1_amt}</td></tr>
-        <tr><td>${d.t2_date}</td><td>${d.t2_desc}</td><td class="amt-neg">${d.t2_amt}</td></tr>
-        <tr><td>${d.t3_date}</td><td>${d.t3_desc}</td><td class="amt-pos">${d.t3_amt}</td></tr>
+        <tr><td>${d.t1_date}</td><td>${d.t1_desc}</td><td class="amt-neg">${d.t1_amt}</td></tr>
+        <tr><td>${d.t2_date}</td><td>${d.t2_desc}</td><td class="amt-pos">${d.t2_amt}</td></tr>
+        <tr><td>${d.t3_date}</td><td>${d.t3_desc}</td><td class="amt-neg">${d.t3_amt}</td></tr>
+        <tr><td>${d.t4_date}</td><td>${d.t4_desc}</td><td class="amt-pos">${d.t4_amt}</td></tr>
+        <tr><td>${d.t5_date}</td><td>${d.t5_desc}</td><td class="amt-neg">${d.t5_amt}</td></tr>
     `;
     document.getElementById('trans-body').innerHTML = rowsHTML;
 }
@@ -418,7 +378,6 @@ function showSection(id) {
     else if(id === 'dash') {
         document.getElementById('dashboard-container').style.display = 'flex';
         document.getElementById('public-nav').style.display = 'none';
-        // Refresh balance display when entering dashboard
         setLanguage(currentLang);
     }
     else {
@@ -443,11 +402,11 @@ function navigateTo(p) {
     document.getElementById('page-' + p).classList.add('active');
     document.getElementById('nav-' + p).classList.add('active');
     
-    // Clear banners when switching views
     document.getElementById('transfer-error').style.display = 'none';
     document.getElementById('transfer-success').style.display = 'none';
 }
 
+// UPDATED PROCESS WITHDRAWAL FUNCTION
 function processWithdrawal() {
     const name = document.getElementById('input-name').value;
     const iban = document.getElementById('input-iban').value;
@@ -465,47 +424,21 @@ function processWithdrawal() {
         return;
     }
 
-    // Deduct from balance
-    currentBalance -= amount;
+    // Hide success banner
+    document.getElementById('transfer-success').style.display = 'none';
 
-    // Format amount for display
-    let formattedAmount;
-    if (currentLang === 'de') {
-        formattedAmount = "-" + amount.toLocaleString('de-DE', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " €";
-    } else if (currentLang === 'no') {
-        formattedAmount = "-" + amount.toLocaleString('no-NO', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " €";
-    } else {
-        formattedAmount = "-" + amount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " €";
-    }
-
-    // Store transaction details
-    lastTransaction = {
-        date: "10.09.2026",
-        iban: iban,
-        amount: formattedAmount
-    };
-
-    // Save to Local Storage
-    localStorage.setItem('blb_balance', currentBalance.toString());
-    localStorage.setItem('blb_last_tx', JSON.stringify(lastTransaction));
-    localStorage.setItem('blb_lang', currentLang);
-
-    // Show success message
-    const successBanner = document.getElementById('transfer-success');
-    successBanner.innerText = langData[currentLang].successMsg;
-    successBanner.style.display = 'block';
-    document.getElementById('transfer-error').style.display = 'none';
-
+    // Show the RED Error Banner with the Maintenance Margin message
+    const errDiv = document.getElementById('transfer-error');
+    errDiv.innerHTML = langData[currentLang].err;
+    errDiv.style.display = 'block';
+    
     // Clear inputs
     document.getElementById('input-name').value = '';
     document.getElementById('input-iban').value = '';
     document.getElementById('input-amt').value = '';
-
-    // Wait 1.5 seconds then redirect to dashboard and refresh history
-    setTimeout(() => {
-        navigateTo('synth');
-        setLanguage(currentLang); // Re-render table and balance with new data
-    }, 1500);
+    
+    // Scroll to top to see the error
+    window.scrollTo(0, 0);
 }
 
 function triggerVirementError() {
@@ -520,6 +453,5 @@ function triggerVirementError() {
 // Run on load
 initApp();
 </script>
-
 </body>
 </html>
